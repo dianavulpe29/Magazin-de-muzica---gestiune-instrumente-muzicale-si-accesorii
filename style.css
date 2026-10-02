@@ -1,0 +1,222 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f7f6fb;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #6b7280;
+  
+  /* Paleta bazată pe nuanța ta lila (#DCD0FF) */
+  --accent: #7b61c9;        /* Violet-lila profund pentru butoane și header (contrast bun cu alb) */
+  --accent-dark: #6b5a9f;   /* Nuanță mai închisă pentru hover */
+  --accent-soft: #DCD0FF;   /* Codul tău lila: folosit la hover pe carduri și accente suave */
+  --border: #e3dff2;        /* Bordură discretă cu tentă lila */
+
+  /* Culori pentru ecusoane (badges) adaptate paletei */
+  --badge-corzi: #9370db;   /* Medium Purple */
+  --badge-clape: #5b8db8;   /* Soft Steel Blue */
+  --badge-accesorii: #4fa184; /* Soft Emerald */
+}
+
+/* Modul Întunecat (Dark Mode) - Cerința S1-R7 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14121a;
+    --card: #1f1b29;
+    --text: #edeaf5;
+    --muted: #9e9bb0;
+    --border: #352e47;
+    --accent-soft: #302645; /* Variantă închisă de lila pentru hover în dark mode */
+  }
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* 4.2. Antetul */
+.app-header {
+  background-color: var(--accent);
+  color: #ffffff;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.app-header h1 {
+  margin: 0 0 8px 0;
+  font-size: 2rem;
+}
+
+.app-header p {
+  margin: 4px 0;
+}
+
+.app-count {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* 4.3. Dispunere pe două coloane cu Grid */
+.container {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* 4.4. Panourile */
+.panel {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 6px rgba(123, 97, 201, 0.06);
+}
+
+.panel h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+/* 4.5. Formularul (Flexbox) */
+.item-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.item-form input[type="text"],
+.item-form select {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: var(--card);
+  color: var(--text);
+}
+
+.item-form button {
+  margin-top: 8px;
+  padding: 12px 16px;
+  background-color: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.item-form button:hover {
+  background-color: var(--accent-dark);
+}
+
+/* 4.6. Lista de carduri (Flexbox) */
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--card);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover-ul folosește nuanța ta de lila */
+.item-card:hover {
+  border-color: var(--accent);
+  background-color: var(--accent-soft);
+}
+
+.card-details h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.05rem;
+}
+
+/* 4.7. Ecusoane (Badges) */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.badge-corzi { background-color: var(--badge-corzi); }
+.badge-clape { background-color: var(--badge-clape); }
+.badge-accesorii { background-color: var(--badge-accesorii); }
+
+.status {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* 4.8. Elementul finalizat/indisponibil - Cerința S1-R5 */
+.item-card.done h3 {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.item-card.done .status {
+  color: var(--muted);
+}
+
+/* Marcaj pentru lista goală */
+.empty {
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Subsolul */
+.app-footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* 5. Focus vizibil tastatură (Tab) - Cerința S1-R7 */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* 4.9. Media query pentru ecrane înguste (Mobile) - Cerința S1-R6 */
+@media (max-width: 700px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}

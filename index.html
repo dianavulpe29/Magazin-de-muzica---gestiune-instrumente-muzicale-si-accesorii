@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zeedo Shop - Gestiune Inventar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Zeedo Shop Inventory</h1>
+    <p>Gestiunea stocului de instrumente muzicale și accesorii profesionale.</p>
+    <p class="app-count">3 produse în evidență, dintre care 2 în stoc</p>
+  </header>
+
+  <main class="container">
+    <!-- Panou formular adăugare -->
+    <section class="panel">
+      <h2>Adaugă produs</h2>
+      <form class="item-form">
+        <label>
+          Denumire produs
+          <input type="text" name="titlu" placeholder="Ex: Fender Stratocaster..." required />
+        </label>
+        
+        <label>
+          Departament
+          <select name="eticheta">
+            <option value="corzi">Instrumente cu corzi</option>
+            <option value="clape">Clape &amp; Sintetizatoare</option>
+            <option value="accesorii">Accesorii &amp; Audio</option>
+          </select>
+        </label>
+
+        <button type="submit">Adaugă produs</button>
+      </form>
+    </section>
+
+    <!-- Panou listă produse -->
+    <section class="panel">
+      <h2>Inventar produse</h2>
+      <!-- Când lista e goală: <p class="empty">Nu există niciun element în inventar.</p> -->
+      <ul class="item-list">
+        <!-- Element 1: În stoc -->
+        <li class="item-card">
+          <div class="card-details">
+            <h3>Fender Player Stratocaster</h3>
+            <span class="badge badge-corzi">Instrumente cu corzi</span>
+          </div>
+          <span class="status">În stoc</span>
+        </li>
+
+        <!-- Element 2: Indisponibil (Epuizat / Stare finalizată conform S1-R5) -->
+        <li class="item-card done">
+          <div class="card-details">
+            <h3>Sintetizator Korg Minilogue XD</h3>
+            <span class="badge badge-clape">Clape &amp; Sintetizatoare</span>
+          </div>
+          <span class="status">Indisponibil</span>
+        </li>
+
+        <!-- Element 3: În stoc -->
+        <li class="item-card">
+          <div class="card-details">
+            <h3>Căști Audio-Technica ATH-M50x</h3>
+            <span class="badge badge-accesorii">Accesorii &amp; Audio</span>
+          </div>
+          <span class="status">În stoc</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    Proiect Tehnologii Web &copy; 2026 - Zeedo Shop
+  </footer>
+</body>
+</html>
