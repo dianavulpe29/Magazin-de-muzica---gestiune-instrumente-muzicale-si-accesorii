@@ -301,6 +301,7 @@ body {
   color: var(--muted);
   font-style: italic;
   text-align: center;
+  padding: 24px;
 }
 
 .app-footer {

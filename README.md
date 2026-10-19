@@ -42,6 +42,18 @@ Details per stage: see the `ai-log/` folder.
 ## Stage 3: Vite and React project
 The app now lives in `frontend/`, built with Vite. The data from stage 2 moved into the main component; the list is still printed raw.
 
+## Stage 4 Verification Checklist
+
+| ID | Requirement | Where (permalink) | How to check |
+| :--- | :--- | :--- | :--- |
+| S4-R1 | 2+ components in src/components/ | [frontend/src/components/](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/tree/main/frontend/src/components) | open folder |
+| S4-R2 | card receives data through props | [ProdusCard.jsx](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/blob/main/frontend/src/components/ProdusCard.jsx) | read |
+| S4-R3 | map + key={id}, no console warnings | [ProdusList.jsx](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/blob/main/frontend/src/components/ProdusList.jsx) | F12, Console |
+| S4-R4 | message for empty list | [ProdusList.jsx](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/blob/main/frontend/src/components/ProdusList.jsx) | set array to [] |
+| S4-R5 | state changes the card look | [ProdusCard.jsx](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/blob/main/frontend/src/components/ProdusCard.jsx) | toggle inStoc flag |
+| S4-R6 | README Stage 4 section + AI log | [README.md](README.md), [ai-log/etapa-04.md](ai-log/etapa-04.md) | read |
+| S4-R7 | commit "Stage 4" pushed | [Link to commit](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/commits/main) | commit history |
+
 ## How to run
 ```bash
 cd frontend
@@ -52,4 +64,5 @@ npm run dev
 - [x] Stage 1: static mockup
 - [x] Stage 2: data logic in JavaScript
 - [x] Stage 3: Vite and React project
-- [ ] Stage 4: Components built from data
+- [x] Stage 4: Components built from data
+- [ ] Stage 5: local state and events

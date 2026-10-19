@@ -1,3 +1,5 @@
+import ProdusList from "./components/ProdusList.jsx";
+
 const produse = [
   {
     id: 1,
@@ -16,11 +18,10 @@ const produse = [
     titlu: "Căști Audio-Technica ATH-M50x",
     inStoc: true,
     departament: "Accesorii & Audio",
-  },
+  }, 
 ];
 
 export default function App() {
-  // Calcul dinamic: câte produse sunt active (în stoc)
   const active = produse.filter((p) => p.inStoc).length;
 
   return (
@@ -34,12 +35,16 @@ export default function App() {
       </header>
 
       <main className="container">
+        {/* Formularul va reveni activ în Etapa 7 */}
         <section className="panel">
-          <h2>Inventar produse (JSON brut)</h2>
-          {/* Temporar în Etapa 3: afișare text brut; componentele React vor fi create în Etapa 4 */}
-          <pre>{JSON.stringify(produse, null, 2)}</pre>
+          <h2>Inventar produse</h2>
+          <ProdusList produse={produse} />
         </section>
       </main>
+
+      <footer className="app-footer">
+        Proiect Tehnologii Web &copy; 2026 - Zeedo Shop
+      </footer>
     </>
   );
 }
