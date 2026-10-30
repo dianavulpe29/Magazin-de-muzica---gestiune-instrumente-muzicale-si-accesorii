@@ -54,8 +54,18 @@ The app now lives in `frontend/`, built with Vite. The data from stage 2 moved i
 | S4-R6 | README Stage 4 section + AI log | [README.md](README.md), [ai-log/etapa-04.md](ai-log/etapa-04.md) | read |
 | S4-R7 | commit "Stage 4" pushed | [Link to commit](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/commits/main) | commit history |
 
-## Stage 5: local state and events
-The list lives in React state. Checking and deleting work directly from the page, and the counters in the header follow automatically. A button in the header switches between light and dark mode. Changes are lost on refresh, which is what stage 6 and stage 10 fix.
+## Stage 5 Verification Checklist
+
+| ID | Requirement | Where (permalink) | How to check |
+| :--- | :--- | :--- | :--- |
+| S5-R1 | list kept in useState, in App | [App.jsx](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/blob/main/frontend/src/App.jsx) | read |
+| S5-R2 | toggling changes state and card look | [App.jsx](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/blob/main/frontend/src/App.jsx), [ProdusCard.jsx](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/blob/main/frontend/src/components/ProdusCard.jsx) | click a checkbox |
+| S5-R3 | delete removes the item | [App.jsx](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/blob/main/frontend/src/App.jsx), [ProdusCard.jsx](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/blob/main/frontend/src/components/ProdusCard.jsx) | click Delete |
+| S5-R4 | header counter derived, not in state | [App.jsx](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/blob/main/frontend/src/App.jsx) | toggle, watch header |
+| S5-R5 | immutable updates (no push, splice, assignment) | [App.jsx](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/blob/main/frontend/src/App.jsx) | read |
+| S5-R6 | light/dark toggle: state + data-theme on html | [App.jsx](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/blob/main/frontend/src/App.jsx), [App.css](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/blob/main/frontend/src/App.css) | click the button, both system themes |
+| S5-R7 | no console warnings; README + AI log | [README.md](README.md), [ai-log/etapa-05.md](ai-log/etapa-05.md) | F12, Console |
+| S5-R8 | commit "Stage 5" pushed | [Link to commit](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/commits/main) | commit history |
 
 ## How to run
 ```bash
