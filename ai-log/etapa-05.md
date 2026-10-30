@@ -12,5 +12,6 @@
 - Got: Codul pentru App.jsx, ProdusList.jsx, ProdusCard.jsx si regulile CSS aferente.
 - Changed or rejected: Adaptat denumirile pentru entitatile Zeedo Shop (produse, inStoc, ProdusCard, ProdusList).
 
+
 ## What I learned / what did not work
 Am invatat cum se pastreaza datele dinamice in useState, importanta functiilor imutabile (map, filter), cum se transmit callback-urile prin props de la parinte la copii si cum se gestioneaza temele prin atributul data-theme pe elementul html.
