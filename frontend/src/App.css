@@ -49,6 +49,7 @@ body {
   color: var(--text);
   line-height: 1.5;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .app-header {
@@ -62,7 +63,7 @@ body {
 
 .app-header h1 {
   margin: 0 0 6px 0;
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   letter-spacing: 1.2px;
   text-transform: uppercase;
   font-weight: 800;
@@ -70,7 +71,7 @@ body {
 
 .app-header p {
   margin: 4px 0;
-  font-size: 1rem;
+  font-size: 0.95rem;
   opacity: 0.95;
 }
 
@@ -108,24 +109,24 @@ body {
 
 .container {
   max-width: 960px;
-  margin: 32px auto 50px auto;
-  padding: 0 16px;
+  margin: 24px auto 40px auto;
+  padding: 0 12px;
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 20px;
 }
 
 .panel {
   background-color: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 24px;
+  padding: 20px 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
 }
 
 .panel h2 {
-  margin: 0 0 18px 0;
-  font-size: 1.1rem;
+  margin: 0 0 16px 0;
+  font-size: 1.05rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.8px;
@@ -158,11 +159,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 20px;
+  gap: 12px;
+  padding: 14px 16px;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
   transition: all 0.2s ease;
+  width: 100%;
 }
 
 .item-card::before {
@@ -180,45 +183,49 @@ body {
 .item-card:hover {
   background-color: var(--card-hover);
   border-color: var(--accent);
-  transform: translateX(4px);
-  box-shadow: 0 6px 18px var(--glow);
+  box-shadow: 0 4px 14px var(--glow);
 }
 
 .task-main {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   cursor: pointer;
   flex: 1;
+  min-width: 0;
 }
 
 .task-main input[type="checkbox"] {
   width: 18px;
   height: 18px;
+  margin-top: 3px;
   accent-color: var(--accent);
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .card-details {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  min-width: 0;
 }
 
 .card-details h3 {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   font-weight: 600;
+  word-break: break-word;
 }
 
 .badge {
   align-self: flex-start;
-  padding: 3px 10px;
+  padding: 3px 8px;
   border-radius: 6px;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
 }
 
 .badge-corzi {
@@ -242,17 +249,19 @@ body {
 .card-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .status {
-  padding: 5px 12px;
+  padding: 4px 10px;
   background: var(--accent-tint);
   border: 1px solid var(--border);
   border-radius: 8px;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--accent-soft);
+  white-space: nowrap;
 }
 
 .btn-danger {
@@ -260,12 +269,13 @@ body {
   background: transparent;
   color: #ef4444;
   border-radius: 8px;
-  padding: 6px 12px;
+  padding: 5px 10px;
   font: inherit;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .btn-danger:hover {
@@ -295,17 +305,31 @@ body {
   color: var(--muted);
   font-style: italic;
   text-align: center;
-  padding: 24px;
+  padding: 20px;
 }
 
 .app-footer {
   text-align: center;
-  padding: 24px;
+  padding: 20px;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
 }
 
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
+}
+
+@media (max-width: 500px) {
+  .item-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card-actions {
+    justify-content: space-between;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
 }

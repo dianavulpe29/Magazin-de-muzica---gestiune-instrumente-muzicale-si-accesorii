@@ -1,6 +1,7 @@
+import { useState } from "react";
 import ProdusList from "./components/ProdusList.jsx";
 
-const produse = [
+const PRODUSE_INITIALE = [
   {
     id: 1,
     titlu: "Fender Player Stratocaster",
@@ -18,15 +19,48 @@ const produse = [
     titlu: "Căști Audio-Technica ATH-M50x",
     inStoc: true,
     departament: "Accesorii & Audio",
-  }, 
+  },
 ];
 
+function temaInitiala() {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
 export default function App() {
+  const [produse, setProduse] = useState(PRODUSE_INITIALE);
+  const [tema, setTema] = useState(temaInitiala);
+
+  function handleToggle(id) {
+    setProduse((prev) =>
+      prev.map((p) => (p.id === id ? { ...p, inStoc: !p.inStoc } : p))
+    );
+  }
+
+  function handleDelete(id) {
+    setProduse((prev) => prev.filter((p) => p.id !== id));
+  }
+
+  function handleTema() {
+    const noua = tema === "dark" ? "light" : "dark";
+    setTema(noua);
+    document.documentElement.dataset.theme = noua;
+  }
+
   const active = produse.filter((p) => p.inStoc).length;
 
   return (
     <>
       <header className="app-header">
+        <button
+          type="button"
+          className="theme-toggle"
+          onClick={handleTema}
+          aria-pressed={tema === "dark"}
+        >
+          {tema === "dark" ? "Mod luminos" : "Mod întunecat"}
+        </button>
         <h1>Zeedo Shop Inventory</h1>
         <p>Gestiunea stocului de instrumente muzicale și accesorii profesionale.</p>
         <p className="app-count">
@@ -35,10 +69,13 @@ export default function App() {
       </header>
 
       <main className="container">
-        {/* Formularul va reveni activ în Etapa 7 */}
         <section className="panel">
           <h2>Inventar produse</h2>
-          <ProdusList produse={produse} />
+          <ProdusList
+            produse={produse}
+            onToggle={handleToggle}
+            onDelete={handleDelete}
+          />
         </section>
       </main>
 
