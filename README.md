@@ -54,6 +54,9 @@ The app now lives in `frontend/`, built with Vite. The data from stage 2 moved i
 | S4-R6 | README Stage 4 section + AI log | [README.md](README.md), [ai-log/etapa-04.md](ai-log/etapa-04.md) | read |
 | S4-R7 | commit "Stage 4" pushed | [Link to commit](https://github.com/dianavulpe29/Magazin-de-muzica---gestiune-instrumente-muzicale-si-accesorii/commits/main) | commit history |
 
+## Stage 5: local state and events
+The list lives in React state. Checking and deleting work directly from the page, and the counters in the header follow automatically. A button in the header switches between light and dark mode. Changes are lost on refresh, which is what stage 6 and stage 10 fix.
+
 ## How to run
 ```bash
 cd frontend
@@ -65,4 +68,5 @@ npm run dev
 - [x] Stage 2: data logic in JavaScript
 - [x] Stage 3: Vite and React project
 - [x] Stage 4: Components built from data
-- [ ] Stage 5: local state and events
+- [x] Stage 5: local state and events
+- [ ] Stage 6: loading data from a mock API
