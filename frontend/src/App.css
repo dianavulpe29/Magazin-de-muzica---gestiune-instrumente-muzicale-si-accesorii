@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+/* Culori implicite pentru Tema Luminoasa */
 :root {
   --bg: #f6f5fb;
   --card: #ffffff;
@@ -11,15 +12,32 @@
   --border: #e3dff2;
   --accent: #7b61c9;
   --accent-dark: #6347b5;
-  --accent-soft: #DCD0FF;
+  --accent-soft: #7b61c9;
   --accent-tint: #f3efff;
   --glow: rgba(123, 97, 201, 0.12);
 
-  --badge-corzi: #a78bfa;
-  --badge-clape: #38bdf8;
-  --badge-accesorii: #34d399;
+  --badge-corzi: #8b5cf6;
+  --badge-clape: #0284c7;
+  --badge-accesorii: #059669;
 }
 
+/* Selector explicit pentru Tema Luminoasa aleasa din buton */
+:root[data-theme="light"] {
+  --bg: #f6f5fb;
+  --card: #ffffff;
+  --card-hover: #faf9ff;
+  --text: #191629;
+  --muted: #6e6888;
+  --border: #e3dff2;
+  --accent-soft: #7b61c9;
+  --accent-tint: #f3efff;
+
+  --badge-corzi: #8b5cf6;
+  --badge-clape: #0284c7;
+  --badge-accesorii: #059669;
+}
+
+/* Suport pentru Tema Sistemului (Etapa 1 + S1-R7) */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #0e0d15;
@@ -28,10 +46,16 @@
     --text: #f4f3fa;
     --muted: #8c86a3;
     --border: #2c2642;
+    --accent-soft: #a78bfa;
     --accent-tint: #231c38;
+
+    --badge-corzi: #a78bfa;
+    --badge-clape: #38bdf8;
+    --badge-accesorii: #34d399;
   }
 }
 
+/* Selector explicit pentru Tema Intunecata aleasa din buton (Etapa 5) */
 :root[data-theme="dark"] {
   --bg: #0e0d15;
   --card: #181525;
@@ -39,7 +63,12 @@
   --text: #f4f3fa;
   --muted: #8c86a3;
   --border: #2c2642;
+  --accent-soft: #a78bfa;
   --accent-tint: #231c38;
+
+  --badge-corzi: #a78bfa;
+  --badge-clape: #38bdf8;
+  --badge-accesorii: #34d399;
 }
 
 body {
@@ -130,7 +159,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: var(--accent-soft);
+  color: var(--text);
   display: flex;
   align-items: center;
   gap: 8px;
